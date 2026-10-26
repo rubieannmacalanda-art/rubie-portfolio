@@ -1,673 +1,951 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rubie Ann Macalanda's professional portfolio showcasing business operations, account management, customer success, technical support, workflow automation, and remote team leadership.">
-  <title>Rubie Ann Macalanda | Business Operations & Customer Success</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f7ff">
+<meta name="description" content="Rubie Ann Macalanda's portfolio in business operations, account management, workflow automation, customer success, and creative support.">
+<title>Rubie Ann Macalanda | Operations & Automation Portfolio</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    .gradient-text {
-      background: linear-gradient(110deg, #4f46e5, #9333ea);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(79, 70, 229, 0.09);
-    }
-
-    .skill-tag {
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      background-color: #e0e7ff;
-    }
-
-    .section-label {
-      letter-spacing: 0.14em;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .card,
-      .skill-tag {
-        transition: none;
-      }
-
-      .card:hover,
-      .skill-tag:hover {
-        transform: none;
-      }
-    }
-  </style>
+<style>
+:root {
+  --bg:#f8f7ff;
+  --surface:#ffffff;
+  --surface2:#f1efff;
+  --text:#25213b;
+  --muted:#77738c;
+  --border:#e8e4f5;
+  --primary:#6d4aff;
+  --primary2:#987cff;
+  --pink:#ef7db6;
+  --cyan:#70d9df;
+  --green:#159b77;
+  --shadow:0 12px 35px rgba(65,43,130,.08);
+}
+body.dark {
+  --bg:#141321;
+  --surface:#201e31;
+  --surface2:#2b2741;
+  --text:#f5f1ff;
+  --muted:#b0abc5;
+  --border:#39344e;
+  --primary:#a18aff;
+  --primary2:#c0afff;
+  --pink:#f49ac9;
+  --cyan:#83e1e6;
+  --green:#69d6b3;
+  --shadow:0 12px 35px rgba(0,0,0,.18);
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"DM Sans",sans-serif;line-height:1.65;
+  transition:background .25s,color .25s;
+}
+h1,h2,h3,h4,.brand {font-family:"Space Grotesk",sans-serif;line-height:1.2}
+h1,h2,h3,p {margin-top:0}
+a {color:inherit;text-decoration:none}
+button,select {font:inherit}
+button,a,select {-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,select:focus-visible {
+  outline:3px solid var(--primary2);outline-offset:3px
+}
+.wrap {width:min(1120px,calc(100% - 36px));margin:auto}
+header {
+  position:sticky;top:0;z-index:50;
+  background:var(--surface);border-bottom:1px solid var(--border);
+}
+.nav {
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.brand {display:flex;align-items:center;gap:10px;font-weight:700}
+.brand-icon {
+  width:40px;height:40px;border-radius:13px;display:grid;place-items:center;
+  color:white;background:linear-gradient(135deg,#6d4aff,#ed7eb7);
+}
+.nav-links {display:flex;align-items:center;gap:21px;font-size:13px;font-weight:700}
+.nav-links a:hover {color:var(--primary)}
+.nav-actions {display:flex;align-items:center;gap:10px}
+.theme-toggle,.menu-toggle {
+  border:1px solid var(--border);background:var(--surface2);
+  color:var(--text);width:42px;height:42px;border-radius:13px;cursor:pointer;
+}
+.menu-toggle {display:none}
+.btn {
+  display:inline-flex;justify-content:center;align-items:center;gap:9px;
+  padding:12px 17px;border-radius:13px;font-size:14px;font-weight:700;
+  border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s;
+}
+.btn:hover {transform:translateY(-2px)}
+.btn-primary {background:var(--primary);color:#fff}
+.btn-primary:hover {background:#5735e5}
+.btn-secondary {background:var(--surface);border-color:var(--border);color:var(--text)}
+.btn-secondary:hover {border-color:var(--primary)}
+.hero {padding:76px 0 54px;position:relative;overflow:hidden}
+.hero-grid {display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}
+.eyebrow {
+  color:var(--primary);font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.hero h1 {font-size:clamp(39px,6vw,67px);letter-spacing:-2.5px;margin:17px 0}
+.gradient {
+  background:linear-gradient(110deg,#6d4aff,#d65fa8);
+  color:transparent;background-clip:text;-webkit-background-clip:text;
+}
+.hero-copy {font-size:17px;color:var(--muted);max-width:650px}
+.hero-buttons {display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.pills {display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.pill {
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--muted);padding:7px 11px;border-radius:30px;font-size:12px;
+}
+.profile-card {
+  background:var(--surface);border:1px solid var(--border);border-radius:28px;
+  padding:29px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.profile-card:before {
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:linear-gradient(135deg,#8d72ff66,#ed7eb755);right:-60px;top:-70px;
+}
+.avatar {
+  position:relative;width:88px;height:88px;border-radius:26px;
+  display:grid;place-items:center;color:#fff;font-size:27px;font-weight:700;
+  background:linear-gradient(135deg,#6d4aff,#e77db8);
+  box-shadow:0 10px 25px #7959d933;
+}
+.profile-card h2 {font-size:22px;margin:20px 0 7px}
+.profile-card p {color:var(--muted);font-size:14px}
+.profile-line {height:1px;background:var(--border);margin:20px 0}
+.profile-item {display:flex;align-items:center;gap:12px;margin:14px 0;font-size:13px}
+.profile-item i {color:var(--primary);width:19px;text-align:center}
+.section {padding:42px 0}
+.section-head {margin-bottom:25px}
+.section-head h2 {font-size:clamp(27px,4vw,36px);margin:8px 0}
+.section-head p {color:var(--muted);max-width:700px;margin-bottom:0}
+.stats-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.stat {
+  background:var(--surface);border:1px solid var(--border);border-radius:20px;
+  padding:23px;box-shadow:var(--shadow);transition:transform .2s;
+}
+.stat:hover,.project:hover,.gallery-card:hover {transform:translateY(-5px)}
+.stat-icon {
+  width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+  background:var(--surface2);color:var(--primary);font-size:17px;
+}
+.stat-value {font:700 31px "Space Grotesk";margin:16px 0 3px}
+.stat-label {font-size:13px;color:var(--muted)}
+.note {font-size:11px;color:var(--muted);margin-top:14px}
+.panel {
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:24px;padding:25px;box-shadow:var(--shadow);
+}
+.dashboard-top {
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:15px;margin-bottom:23px;
+}
+.dashboard-top h3 {margin:0 0 4px;font-size:20px}
+.dashboard-top p {margin:0;color:var(--muted);font-size:13px}
+select {
+  padding:10px 13px;border-radius:11px;background:var(--surface);
+  border:1px solid var(--border);color:var(--text);max-width:100%;
+}
+.dashboard-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.chart-card {
+  border:1px solid var(--border);border-radius:17px;padding:20px;min-width:0;
+}
+.chart-card h4 {margin:0 0 6px;font-size:16px}
+.chart-card>p {color:var(--muted);font-size:12px;margin-bottom:18px}
+.bar-chart {
+  display:flex;align-items:flex-end;justify-content:space-around;gap:9px;
+  height:205px;padding:10px 3px 0;border-bottom:1px solid var(--border);
+  background:repeating-linear-gradient(to top,transparent 0,transparent 48px,var(--border) 49px,var(--border) 50px);
+}
+.bar-col {height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;min-width:0}
+.bar {
+  width:min(38px,80%);min-height:5px;border-radius:7px 7px 2px 2px;
+  background:linear-gradient(180deg,var(--primary2),var(--primary));
+  transition:height .4s;
+}
+.bar-label {font-size:11px;color:var(--muted)}
+.legend {display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:var(--muted)}
+.legend span:before {content:"";display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--primary);margin-right:6px}
+.donut-wrap {display:flex;align-items:center;justify-content:center;padding:13px 0}
+.donut {
+  width:155px;height:155px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--primary) 0 42%,var(--pink) 42% 72%,var(--cyan) 72% 90%,var(--border) 90% 100%);
+  position:relative;
+}
+.donut:before {content:"";position:absolute;inset:20px;background:var(--surface);border-radius:50%}
+.donut-center {position:relative;text-align:center}
+.donut-center strong {font:700 28px "Space Grotesk";display:block}
+.donut-center span {font-size:11px;color:var(--muted)}
+.legend-list {display:grid;gap:10px;margin-top:10px}
+.legend-row {display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
+.legend-row b {color:var(--text)}
+.dot {display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px}
+.projects-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project {
+  border:1px solid var(--border);border-radius:22px;background:var(--surface);
+  padding:25px;box-shadow:var(--shadow);transition:transform .25s;min-width:0;
+}
+.project-top {display:flex;align-items:center;justify-content:space-between;gap:10px}
+.project-icon {
+  width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
+  color:var(--primary);background:var(--surface2);font-size:19px;
+}
+.project-number {font:700 12px "Space Grotesk";color:var(--muted)}
+.project h3 {font-size:20px;margin:19px 0 9px}
+.project p {font-size:14px;color:var(--muted)}
+.project-labels {display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}
+.tag {
+  display:inline-block;border-radius:8px;padding:5px 9px;
+  background:var(--surface2);color:var(--primary);font-size:11px;font-weight:700;
+}
+.project details {border-top:1px solid var(--border);padding-top:13px;margin-top:16px}
+.project summary {cursor:pointer;color:var(--primary);font-weight:700;font-size:13px}
+.project details p {margin:12px 0 0}
+.gallery-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.gallery-card {
+  border:1px solid var(--border);border-radius:20px;overflow:hidden;
+  background:var(--surface);transition:transform .25s;min-width:0;
+}
+.art {
+  min-height:175px;display:flex;align-items:center;justify-content:center;
+  padding:22px;position:relative;overflow:hidden;
+}
+.art-one {background:linear-gradient(135deg,#6c4aff,#b49bff)}
+.art-two {background:linear-gradient(135deg,#ffb7d8,#f77caa)}
+.art-three {background:linear-gradient(135deg,#c0f4e7,#65cbb8)}
+.art-four {background:linear-gradient(135deg,#f9d48a,#f7a56b)}
+.art-five {background:linear-gradient(135deg,#b4dcff,#7899f7)}
+.art-six {background:linear-gradient(135deg,#292544,#6856a8)}
+.mini-card {
+  width:100%;max-width:235px;border-radius:13px;padding:15px;
+  background:#ffffffef;color:#28213d;box-shadow:0 12px 25px #21134b22;
+}
+.mini-card small {font-size:9px;color:#777}
+.mini-card strong {display:block;font:700 19px "Space Grotesk";line-height:1.25;margin:8px 0}
+.mini-line {height:6px;border-radius:6px;background:#e5e1f8;margin-top:7px}
+.mini-bars {display:flex;align-items:flex-end;gap:7px;height:48px;margin-top:12px}
+.mini-bars span {flex:1;border-radius:4px 4px 0 0;background:#9278ff}
+.art-title {font:700 25px "Space Grotesk";color:white;text-align:center;line-height:1.15}
+.gallery-caption {padding:17px}
+.gallery-caption h3 {font-size:15px;margin:0 0 5px}
+.gallery-caption p {font-size:12px;color:var(--muted);margin:0}
+.gallery-note {
+  background:var(--surface2);border-radius:14px;padding:14px 16px;
+  color:var(--muted);font-size:12px;margin-top:17px;
+}
+.timeline {display:grid;gap:15px}
+.job {
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:19px;padding:23px;box-shadow:var(--shadow);
+}
+.job-header {display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.job h3 {margin:0;font-size:18px}
+.company {color:var(--primary);font-weight:700;margin-top:5px;font-size:14px}
+.date {font-size:12px;color:var(--muted);background:var(--surface2);padding:6px 10px;border-radius:20px;height:fit-content}
+.job ul {padding-left:19px;color:var(--muted);font-size:13px;margin-bottom:0}
+.job li {margin-top:7px}
+.skills-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.skill-card {background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:23px}
+.skill-card h3 {font-size:17px;margin:0 0 14px}
+.skill-card h3 i {color:var(--primary);margin-right:8px}
+.skill-list {display:flex;flex-wrap:wrap;gap:8px}
+.skill-chip {font-size:12px;padding:7px 10px;background:var(--surface2);color:var(--text);border-radius:9px}
+.contact-box {
+  background:linear-gradient(120deg,#ece6ff,#fce7f3);
+  border-radius:27px;padding:36px;color:#29213f;
+}
+body.dark .contact-box {background:linear-gradient(120deg,#332950,#42283f);color:var(--text)}
+.contact-box p {max-width:650px;color:inherit;opacity:.8}
+.contact-links {display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+footer {padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+.footer-inner {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.back-top {
+  position:fixed;right:20px;bottom:20px;width:45px;height:45px;
+  border:0;border-radius:15px;background:var(--primary);color:white;
+  box-shadow:var(--shadow);cursor:pointer;display:none;z-index:30;
+}
+.back-top.visible {display:block}
+@media(max-width:900px) {
+  .nav-links {display:none;position:absolute;top:72px;left:0;right:0;background:var(--surface);padding:18px 24px;border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start}
+  .nav-links.open {display:flex}
+  .menu-toggle {display:block}
+  .hero-grid {grid-template-columns:1fr}
+  .profile-card {max-width:600px}
+  .stats-grid {grid-template-columns:repeat(2,1fr)}
+  .dashboard-grid {grid-template-columns:1fr}
+  .gallery-grid {grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px) {
+  .wrap {width:calc(100% - 28px)}
+  .hero {padding-top:45px}
+  .hero h1 {letter-spacing:-1.5px}
+  .hero-copy {font-size:15px}
+  .projects-grid,.skills-grid,.gallery-grid {grid-template-columns:1fr}
+  .stat {padding:17px}
+  .stat-value {font-size:26px}
+  .panel {padding:15px}
+  .chart-card {padding:14px}
+  .bar-chart {height:170px}
+  .nav {min-height:65px}
+  .brand {font-size:13px}
+  .brand-icon {width:35px;height:35px}
+  .nav-links {top:65px}
+  .contact-box {padding:24px}
+}
+</style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased">
-
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3 font-bold text-slate-900">
-        <span class="bg-indigo-600 text-white rounded-xl px-3 py-2 text-sm">RM</span>
-        <span>Rubie Ann Macalanda</span>
-      </a>
-
-      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#about" class="hover:text-indigo-600">About</a>
-        <a href="#competencies" class="hover:text-indigo-600">Expertise</a>
-        <a href="#experience" class="hover:text-indigo-600">Experience</a>
-        <a href="#skills" class="hover:text-indigo-600">Skills & Tools</a>
-        <a href="#contact" class="hover:text-indigo-600">Contact</a>
-      </div>
-
-      <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-4 py-2 text-sm font-semibold transition-colors">
-        Let's Connect
-      </a>
-    </nav>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-16">
-
-    <!-- Hero -->
-    <section id="home" class="grid lg:grid-cols-[1.5fr_0.8fr] gap-8 items-center">
-      <div class="space-y-6">
-        <div class="inline-flex items-center gap-2 rounded-full bg-indigo-50 border border-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700">
-          <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-          Open to Remote Opportunities
-        </div>
-
-        <div class="space-y-3">
-          <p class="text-sm font-semibold uppercase section-label text-indigo-600">
-            Business Operations · Account Management · Automation
-          </p>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900">
-            Rubie Ann<br>
-            <span class="gradient-text">Macalanda</span>
-          </h1>
-
-          <h2 class="text-xl sm:text-2xl font-semibold text-slate-700">
-            A versatile professional who gets things done.
-          </h2>
-        </div>
-
-        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
-          I bring together experience in account management, customer success,
-          business operations, technical support, e-commerce, and administrative
-          coordination. I enjoy solving problems, improving workflows, working
-          with data, supporting teams, and finding practical ways to make work
-          more efficient.
-        </p>
-
-        <div class="flex flex-wrap gap-3">
-          <a href="#experience" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl px-5 py-3 font-semibold transition-colors">
-            Explore My Experience
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-          <a href="mailto:rubieannmacalanda@gmail.com" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 rounded-xl px-5 py-3 font-semibold transition-colors">
-            <i class="fa-regular fa-envelope text-indigo-600"></i>
-            Contact Me
-          </a>
-        </div>
-
-        <div class="flex flex-wrap gap-x-5 gap-y-2 pt-2 text-sm text-slate-500">
-          <span><i class="fa-solid fa-house-laptop mr-2 text-indigo-500"></i>Remote Work</span>
-          <span><i class="fa-solid fa-people-group mr-2 text-indigo-500"></i>Team Leadership</span>
-          <span><i class="fa-solid fa-gears mr-2 text-indigo-500"></i>Process Improvement</span>
-        </div>
-      </div>
-
-      <!-- Profile Summary Card -->
-      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-7 sm:p-9">
-        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-          RAM
-        </div>
-
-        <h2 class="mt-5 text-xl font-bold text-slate-900">My Professional Approach</h2>
-        <p class="mt-2 text-sm leading-relaxed text-slate-600">
-          I combine people skills, operational thinking, technical problem-solving,
-          and creativity to help businesses run more smoothly.
-        </p>
-
-        <div class="mt-6 space-y-4">
-          <div class="flex items-start gap-3">
-            <i class="fa-solid fa-check-circle text-indigo-600 mt-1"></i>
-            <div>
-              <p class="font-semibold text-slate-800 text-sm">People & Relationships</p>
-              <p class="text-xs text-slate-500 mt-1">Client relationships, customer care, and team support</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <i class="fa-solid fa-check-circle text-indigo-600 mt-1"></i>
-            <div>
-              <p class="font-semibold text-slate-800 text-sm">Systems & Efficiency</p>
-              <p class="text-xs text-slate-500 mt-1">Reporting, spreadsheets, process improvement, and automation</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <i class="fa-solid fa-check-circle text-indigo-600 mt-1"></i>
-            <div>
-              <p class="font-semibold text-slate-800 text-sm">Creative & Technical Support</p>
-              <p class="text-xs text-slate-500 mt-1">Troubleshooting, Canva editing, and basic graphic design</p>
-            </div>
-          </div>
-        </div>
-
-        <a href="https://www.linkedin.com/in/rubieannmacalanda"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="mt-7 inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold text-sm">
-          <i class="fa-brands fa-linkedin"></i>
-          View My LinkedIn Profile
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- Key Achievements -->
-    <section id="highlights" class="space-y-6">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">Professional Highlights</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Impact Through Better Operations</h2>
-        <p class="mt-2 text-slate-600">Selected results from my professional experience.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <i class="fa-solid fa-building text-indigo-600 text-xl"></i>
-          <p class="mt-4 text-3xl font-extrabold text-slate-900">300+</p>
-          <p class="mt-1 text-sm text-slate-600">Client properties managed</p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <i class="fa-solid fa-people-group text-indigo-600 text-xl"></i>
-          <p class="mt-4 text-3xl font-extrabold text-slate-900">20</p>
-          <p class="mt-1 text-sm text-slate-600">Team members led</p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <i class="fa-solid fa-gears text-indigo-600 text-xl"></i>
-          <p class="mt-4 text-3xl font-extrabold text-slate-900">35%+</p>
-          <p class="mt-1 text-sm text-slate-600">Reduction in processing time</p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <i class="fa-solid fa-heart text-indigo-600 text-xl"></i>
-          <p class="mt-4 text-3xl font-extrabold text-slate-900">87%</p>
-          <p class="mt-1 text-sm text-slate-600">Client retention rate</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="space-y-5">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">About Me</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">More Than One Skill Set</h2>
-      </div>
-
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8">
-        <div class="max-w-4xl space-y-4 text-slate-600 leading-relaxed">
-          <p>
-            My professional background spans account management, customer service,
-            technical support, e-commerce, business operations, and virtual assistance.
-            Working across different business environments has taught me to adapt quickly,
-            learn new systems, communicate clearly, and approach challenges from different angles.
-          </p>
-
-          <p>
-            I enjoy combining relationship management with practical problem-solving.
-            Whether I'm supporting customers, coordinating a team, organizing business data,
-            improving a spreadsheet, automating a repetitive task, or creating a simple visual
-            in Canva, my goal is to make the work more organized and effective.
-          </p>
-
-          <p>
-            I'm especially interested in remote roles where I can bring together my
-            operational experience, technical skills, attention to detail, and ability
-            to take ownership of tasks.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Core Competencies -->
-    <section id="competencies" class="space-y-6">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">What I Bring</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Core Competencies & Industry Experience</h2>
-        <p class="mt-2 text-slate-600 max-w-3xl">
-          A broad skill set developed across customer-facing, technical, administrative,
-          and operational roles.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i class="fa-solid fa-handshake text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-bold text-slate-900">Account Management & Customer Success</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Client relationships, account health checks, customer retention,
-            escalations, onboarding support, and stakeholder communication.
-          </p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
-            <i class="fa-solid fa-people-group text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-bold text-slate-900">Business Operations & Team Leadership</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Daily operations, team coordination, workload management, performance
-            reporting, KPI monitoring, and process documentation.
-          </p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-            <i class="fa-solid fa-headset text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-bold text-slate-900">Customer Service & Technical Support</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Customer communication, technical troubleshooting, issue resolution,
-            seller assistance, and support case handling.
-          </p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-            <i class="fa-solid fa-chart-line text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-bold text-slate-900">Data, Reporting & Billing Operations</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Spreadsheet management, data quality, utility billing coordination,
-            operational reporting, and record management.
-          </p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
-            <i class="fa-solid fa-cart-shopping text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-bold text-slate-900">E-Commerce & Online Marketplaces</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Shopify operations, order processing, product listings, seller support,
-            customer inquiries, returns, and refunds.
-          </p>
-        </div>
-
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center">
-            <i class="fa-solid fa-palette text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-bold text-slate-900">Creative & Administrative Support</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Canva content editing, basic graphic design, virtual assistance,
-            calendar coordination, scheduling, and business administration.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6">
-        <h3 class="font-bold text-indigo-950">
-          <i class="fa-solid fa-layer-group mr-2 text-indigo-600"></i>
-          Industry Experience
-        </h3>
-        <div class="flex flex-wrap gap-2 mt-4">
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Property Management</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Utility Billing</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Home Services</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">E-Commerce</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Online Marketplaces</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Consumer Electronics</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Customer Support</span>
-          <span class="skill-tag bg-white text-indigo-800 border border-indigo-100 rounded-full px-3 py-2 text-sm">Administrative Services</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Professional Experience -->
-    <section id="experience" class="space-y-6">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">Career Journey</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Professional Experience</h2>
-      </div>
-
-      <div class="space-y-5">
-
-        <!-- Livable -->
-        <article class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-            <div>
-              <h3 class="text-xl font-bold text-slate-900">Account Manager</h3>
-              <p class="text-indigo-600 font-semibold mt-1">Livable Inc.</p>
-            </div>
-            <span class="bg-indigo-50 text-indigo-700 text-sm font-medium rounded-full px-3 py-1.5 w-fit">March 2022 – Present</span>
-          </div>
-
-          <ul class="list-disc pl-5 mt-5 space-y-2 text-sm leading-relaxed text-slate-600">
-            <li>Manage a portfolio of 300+ client properties, conduct account health checks, address client concerns, and support an 87% client retention rate.</li>
-            <li>Lead a 20-person billing and support team, coordinating workloads, monitoring performance, and supporting daily operations.</li>
-            <li>Oversee utility billing workflows and emphasize accurate records and on-time completion.</li>
-            <li>Standardize workflows and automate manual processes, reducing processing time by 35% or more.</li>
-            <li>Manage client escalations, support issues, service-level expectations, and team performance reporting.</li>
-          </ul>
-        </article>
-
-        <!-- Loyal Exterior Cleaning -->
-        <article class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-            <div>
-              <h3 class="text-xl font-bold text-slate-900">Business Manager</h3>
-              <p class="text-indigo-600 font-semibold mt-1">Loyal Exterior Cleaning</p>
-            </div>
-            <span class="bg-slate-100 text-slate-600 text-sm font-medium rounded-full px-3 py-1.5 w-fit">July 2018 – August 2026</span>
-          </div>
-
-          <ul class="list-disc pl-5 mt-5 space-y-2 text-sm leading-relaxed text-slate-600">
-            <li>Coordinated day-to-day business operations, job scheduling, field technician assignments, and customer communication.</li>
-            <li>Managed service inquiries, customer follow-ups, invoicing, payment reminders, and recurring appointments.</li>
-            <li>Prepared sales and operational reports to support business tracking and decision-making.</li>
-            <li>Used automation tools, including Zapier and Claude, to improve workflows and reduce repetitive tasks.</li>
-          </ul>
-        </article>
-
-        <!-- Red Rock Furniture -->
-        <article class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-            <div>
-              <h3 class="text-xl font-bold text-slate-900">E-Commerce Manager</h3>
-              <p class="text-indigo-600 font-semibold mt-1">Red Rock Furniture</p>
-            </div>
-            <span class="bg-slate-100 text-slate-600 text-sm font-medium rounded-full px-3 py-1.5 w-fit">February 2017 – July 2018</span>
-          </div>
-
-          <ul class="list-disc pl-5 mt-5 space-y-2 text-sm leading-relaxed text-slate-600">
-            <li>Managed Shopify store operations, order processing, product listings, and product data accuracy.</li>
-            <li>Handled customer inquiries, returns, refunds, and order-related concerns.</li>
-            <li>Prepared weekly sales performance reports and conducted sales audits.</li>
-          </ul>
-        </article>
-
-        <!-- Allstar Dance Studio -->
-        <article class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-            <div>
-              <h3 class="text-xl font-bold text-slate-900">Virtual Assistant</h3>
-              <p class="text-indigo-600 font-semibold mt-1">Allstar Dance Studio</p>
-            </div>
-            <span class="bg-slate-100 text-slate-600 text-sm font-medium rounded-full px-3 py-1.5 w-fit">January 2015 – January 2017</span>
-          </div>
-
-          <ul class="list-disc pl-5 mt-5 space-y-2 text-sm leading-relaxed text-slate-600">
-            <li>Managed customer service emails, inquiries, lead follow-ups, and enrollment reminders.</li>
-            <li>Supported the business owner with calendar management, email organization, meeting coordination, and administrative tasks.</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Additional Customer Service Experience -->
-    <section id="customer-support" class="space-y-6">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">Additional Experience</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Customer Service & Technical Support</h2>
-        <p class="mt-2 text-slate-600 max-w-3xl">
-          Six years of customer service experience across online marketplace support
-          and consumer technology troubleshooting.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-5">
-
-        <article class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center">
-              <i class="fa-solid fa-store text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900">Amazon Seller Support</h3>
-              <p class="text-sm text-slate-500">2010 – 2013</p>
-            </div>
-          </div>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-600">
-            Supported online sellers with marketplace-related questions, account
-            concerns, issue resolution, and customer service inquiries.
-          </p>
-        </article>
-
-        <article class="card bg-white border border-slate-200 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-              <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900">Samsung Technical Support</h3>
-              <p class="text-sm text-slate-500">2013 – 2016</p>
-            </div>
-          </div>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-600">
-            Assisted customers with technical concerns, troubleshooting,
-            product-related questions, and support issue resolution.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Skills and Tools -->
-    <section id="skills" class="space-y-6">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">My Toolkit</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Skills & Software Tools</h2>
-        <p class="mt-2 text-slate-600">
-          A combination of operational, analytical, technical, and creative capabilities.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-5">
-
-        <!-- Google Workspace -->
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-7">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-green-50 text-green-700 flex items-center justify-center">
-              <i class="fa-brands fa-google text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">Google Workspace</h3>
-              <p class="text-sm text-indigo-600 font-medium">Sheets & Apps Script Focus</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="skill-tag rounded-full bg-indigo-50 text-indigo-700 px-3 py-2 text-sm font-medium">Google Sheets</span>
-            <span class="skill-tag rounded-full bg-indigo-50 text-indigo-700 px-3 py-2 text-sm font-medium">Google Apps Script</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Google Docs</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Google Drive</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Google Forms</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Google Slides</span>
-          </div>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-600">
-            Spreadsheet organization, formulas, reporting, data management, and
-            Apps Script-based workflow automation.
-          </p>
-        </div>
-
-        <!-- CRM -->
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-7">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
-              <i class="fa-solid fa-database text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">CRM & Business Platforms</h3>
-              <p class="text-sm text-slate-500">Client and operational systems</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">HubSpot</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">AppFolio</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Housecall Pro</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Shopify</span>
-          </div>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-600">
-            Client record management, e-commerce operations, service coordination,
-            customer tracking, and administrative workflows.
-          </p>
-        </div>
-
-        <!-- Automation -->
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-7">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center">
-              <i class="fa-solid fa-gears text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">Automation & AI Tools</h3>
-              <p class="text-sm text-slate-500">Efficiency and process improvement</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="skill-tag rounded-full bg-purple-50 text-purple-700 px-3 py-2 text-sm">Google Apps Script</span>
-            <span class="skill-tag rounded-full bg-purple-50 text-purple-700 px-3 py-2 text-sm">Zapier</span>
-            <span class="skill-tag rounded-full bg-purple-50 text-purple-700 px-3 py-2 text-sm">Claude</span>
-          </div>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-600">
-            Automating repetitive tasks, improving workflows, organizing information,
-            and supporting operational productivity.
-          </p>
-        </div>
-
-        <!-- Creative -->
-        <div class="card bg-white border border-slate-200 rounded-2xl p-6 sm:p-7">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-pink-50 text-pink-700 flex items-center justify-center">
-              <i class="fa-solid fa-palette text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">Creative & Visual Tools</h3>
-              <p class="text-sm text-slate-500">Basic design and content editing</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="skill-tag rounded-full bg-pink-50 text-pink-700 px-3 py-2 text-sm">Canva</span>
-            <span class="skill-tag rounded-full bg-pink-50 text-pink-700 px-3 py-2 text-sm">Basic Graphic Design</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Visual Content Editing</span>
-            <span class="skill-tag rounded-full bg-slate-100 text-slate-700 px-3 py-2 text-sm">Business Materials</span>
-          </div>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-600">
-            Editing visual content and creating simple, professional graphics
-            and business materials.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="space-y-5">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">Education</p>
-        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Academic Background</h2>
-      </div>
-
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 flex items-start gap-4">
-        <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-graduation-cap text-xl"></i>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold text-slate-900">Bachelor of Science in Information Technology</h3>
-          <p class="mt-1 text-indigo-600 font-medium">STI College, Pasay</p>
-          <p class="mt-1 text-sm text-slate-500">2006 – 2010</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="space-y-5">
-      <div>
-        <p class="text-xs font-bold uppercase section-label text-indigo-600">Let's Connect</p>
-        <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Let's do great work together.</h2>
-      </div>
-
-      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-3xl p-6 sm:p-10">
-        <p class="text-slate-600 leading-relaxed max-w-3xl">
-          I'm interested in remote opportunities in business operations, team leadership,
-          account management, customer success, technical support, and operations coordination.
-          If you're looking for someone adaptable, organized, and comfortable wearing
-          multiple hats, I'd love to connect.
-        </p>
-
-        <div class="flex flex-wrap gap-3 mt-6">
-          <a href="mailto:rubieannmacalanda@gmail.com" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl px-5 py-3 font-semibold transition-colors">
-            <i class="fa-solid fa-envelope"></i>
-            Email Me
-          </a>
-
-          <a href="https://www.linkedin.com/in/rubieannmacalanda"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 rounded-xl px-5 py-3 font-semibold transition-colors">
-            <i class="fa-brands fa-linkedin text-indigo-600"></i>
-            Connect on LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200 py-7 mt-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
-      <p>&copy; 2026 Rubie Ann Macalanda. All rights reserved.</p>
-      <a href="#home" class="hover:text-indigo-600 font-medium">
-        Back to top ↑
-      </a>
+<body>
+<header>
+  <nav class="wrap nav" aria-label="Main navigation">
+    <a href="#home" class="brand">
+      <span class="brand-icon">RM</span>
+      <span>Rubie Ann Macalanda</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
 
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><i class="fa-solid fa-sparkles"></i> Operations · People · Technology</div>
+        <h1>Hi, I'm Rubie.<br><span class="gradient">I make work work better.</span></h1>
+        <p class="hero-copy">
+          I'm a versatile remote professional combining account management,
+          customer success, team leadership, workflow automation, technical
+          support, and creative problem-solving to help businesses run smoothly.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#projects">Explore My Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn btn-secondary" href="mailto:rubieannmacalanda@gmail.com"><i class="fa-regular fa-envelope"></i> Let's Connect</a>
+        </div>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-house-laptop"></i> Remote Work</span>
+          <span class="pill"><i class="fa-solid fa-people-group"></i> Team Leadership</span>
+          <span class="pill"><i class="fa-solid fa-gears"></i> Automation</span>
+          <span class="pill"><i class="fa-solid fa-palette"></i> Creative Support</span>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="avatar">RAM</div>
+        <h2>Many skills. One goal.</h2>
+        <p>Making work simpler, teams stronger, and customer experiences better.</p>
+        <div class="profile-line"></div>
+        <div class="profile-item"><i class="fa-solid fa-users"></i><span>Account & relationship management</span></div>
+        <div class="profile-item"><i class="fa-solid fa-chart-simple"></i><span>Reporting & operational performance</span></div>
+        <div class="profile-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Google Sheets & workflow automation</span></div>
+        <div class="profile-item"><i class="fa-solid fa-pen-nib"></i><span>Canva & basic graphic design</span></div>
+        <div class="profile-line"></div>
+        <a href="https://www.linkedin.com/in/rubieannmacalanda" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section" id="highlights">
+    <div class="section-head">
+      <div class="eyebrow">A few numbers</div>
+      <h2>Work that makes an impact.</h2>
+      <p>Selected highlights from my account management and operations experience.</p>
+    </div>
+    <div class="stats-grid">
+      <article class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-building"></i></div>
+        <div class="stat-value" data-count="300" data-suffix="+">300+</div>
+        <div class="stat-label">Client properties managed</div>
+      </article>
+      <article class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="stat-value" data-count="20">20</div>
+        <div class="stat-label">Team members led</div>
+      </article>
+      <article class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="stat-value" data-count="35" data-suffix="%+">35%+</div>
+        <div class="stat-label">Reduction in processing time</div>
+      </article>
+      <article class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="stat-value" data-count="87" data-suffix="%">87%</div>
+        <div class="stat-label">Client retention rate</div>
+      </article>
+    </div>
+    <p class="note">Figures reflect the professional results provided for this portfolio. Confirm they are accurate and shareable before applying.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-head">
+      <div class="eyebrow">A little about me</div>
+      <h2>I'm a multi-skilled problem solver.</h2>
+    </div>
+    <div class="panel">
+      <p>
+        My career has taken me through customer service, technical support,
+        e-commerce, virtual assistance, home services, property-related operations,
+        and account management. That variety has helped me learn new tools quickly,
+        communicate with different stakeholders, and adapt to changing business needs.
+      </p>
+      <p>
+        I enjoy bringing order to complex processes: organizing information in
+        Google Sheets, building useful reports, streamlining repetitive tasks,
+        supporting customers, coordinating teams, or creating simple visual
+        materials in Canva. I bring a practical, hands-on approach and a willingness
+        to jump in wherever the team needs support.
+      </p>
+      <div class="pills">
+        <span class="pill">Customer-first mindset</span>
+        <span class="pill">Analytical thinking</span>
+        <span class="pill">Process improvement</span>
+        <span class="pill">Adaptability</span>
+        <span class="pill">Attention to detail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-head">
+      <div class="eyebrow">Featured work</div>
+      <h2>Projects & problem-solving.</h2>
+      <p>Examples of the kinds of operational challenges I work on. These are portfolio case-study summaries, not live client systems.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-gears"></i></div>
+          <span class="project-number">PROJECT 01</span>
+        </div>
+        <h3>Workflow Automation & Process Improvement</h3>
+        <p>Streamlining repetitive billing and support processes to reduce manual effort and create a more consistent workflow.</p>
+        <div class="project-labels">
+          <span class="tag">Process Improvement</span><span class="tag">Automation</span><span class="tag">Operations</span>
+        </div>
+        <details>
+          <summary>View case study approach</summary>
+          <p><strong>Challenge:</strong> Repetitive manual steps can slow down recurring operational work.</p>
+          <p><strong>Approach:</strong> Review the workflow, identify repeated tasks, standardize steps, and use suitable automation where practical.</p>
+          <p><strong>Reported result:</strong> Processing time reduced by 35% or more in the relevant workflow. The precise project scope and measurement should be confirmed before sharing externally.</p>
+        </details>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+          <span class="project-number">PROJECT 02</span>
+        </div>
+        <h3>Google Sheets Reporting & Data Organization</h3>
+        <p>Organizing operational information into structured spreadsheets that support tracking, reporting, and better visibility.</p>
+        <div class="project-labels">
+          <span class="tag">Google Sheets</span><span class="tag">Reporting</span><span class="tag">Data Quality</span>
+        </div>
+        <details>
+          <summary>View case study approach</summary>
+          <p><strong>Challenge:</strong> Scattered records make it harder to monitor progress and spot missing information.</p>
+          <p><strong>Approach:</strong> Structure data consistently, use formulas and validation where appropriate, and create clear summaries for operational review.</p>
+          <p><strong>Outcome:</strong> A repeatable reporting approach with clearer visibility into records and work status. Replace this summary with a real example when ready.</p>
+        </details>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-code"></i></div>
+          <span class="project-number">PROJECT 03</span>
+        </div>
+        <h3>Apps Script & Repetitive Task Automation</h3>
+        <p>Using Google Apps Script where appropriate to reduce routine spreadsheet work and improve consistency.</p>
+        <div class="project-labels">
+          <span class="tag">Google Apps Script</span><span class="tag">Google Workspace</span><span class="tag">Productivity</span>
+        </div>
+        <details>
+          <summary>View project outline</summary>
+          <p><strong>Potential use case:</strong> Automating repetitive updates, formatting, notifications, or reporting steps in a Google Workspace workflow.</p>
+          <p><strong>Portfolio note:</strong> Add a screenshot or sanitized code sample of a script you have personally built. Do not present this example as a completed client deployment unless you have done it.</p>
+        </details>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <span class="project-number">PROJECT 04</span>
+        </div>
+        <h3>Client & Team Operations</h3>
+        <p>Coordinating client needs, team workloads, escalations, service expectations, and performance tracking.</p>
+        <div class="project-labels">
+          <span class="tag">Account Management</span><span class="tag">Leadership</span><span class="tag">Customer Success</span>
+        </div>
+        <details>
+          <summary>View case study approach</summary>
+          <p><strong>Scope:</strong> Portfolio management across 300+ client properties and leadership of a 20-person billing and support team.</p>
+          <p><strong>Focus:</strong> Account health, client communication, issue escalation, workload coordination, and service performance.</p>
+          <p><strong>Reported result:</strong> 87% client retention. Confirm the reporting period and calculation before using it in a formal case study.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE DASHBOARD -->
+  <section class="section" id="dashboard">
+    <div class="section-head">
+      <div class="eyebrow">Data & reporting</div>
+      <h2>Operations dashboard demo.</h2>
+      <p>A small interactive demonstration of how operational metrics can be presented. All chart values below are fictional sample data, not company records.</p>
+    </div>
+
+    <div class="panel">
+      <div class="dashboard-top">
+        <div>
+          <h3>Sample performance overview</h3>
+          <p>Change the view to update the demonstration charts.</p>
+        </div>
+        <label>
+          <span class="note" style="display:block;margin:0 0 5px">Reporting view</span>
+          <select id="periodSelect" aria-label="Select dashboard reporting view">
+            <option value="monthly">Monthly sample</option>
+            <option value="quarterly">Quarterly sample</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="chart-card">
+          <h4 id="barTitle">Sample work completed</h4>
+          <p>Illustrative units completed per period</p>
+          <div class="bar-chart" id="barChart" role="img" aria-label="Bar chart showing fictional sample work completed">
+            <div class="bar-col"><div class="bar" style="height:40%"></div><span class="bar-label">Jan</span></div>
+            <div class="bar-col"><div class="bar" style="height:58%"></div><span class="bar-label">Feb</span></div>
+            <div class="bar-col"><div class="bar" style="height:49%"></div><span class="bar-label">Mar</span></div>
+            <div class="bar-col"><div class="bar" style="height:75%"></div><span class="bar-label">Apr</span></div>
+            <div class="bar-col"><div class="bar" style="height:67%"></div><span class="bar-label">May</span></div>
+            <div class="bar-col"><div class="bar" style="height:88%"></div><span class="bar-label">Jun</span></div>
+          </div>
+          <div class="legend"><span>Sample completed work</span></div>
+        </div>
+
+        <div class="chart-card">
+          <h4>Illustrative work mix</h4>
+          <p>Example allocation for dashboard design purposes</p>
+          <div class="donut-wrap">
+            <div class="donut" role="img" aria-label="Illustrative work mix, not actual company data">
+              <div class="donut-center"><strong>100%</strong><span>Sample mix</span></div>
+            </div>
+          </div>
+          <div class="legend-list">
+            <div class="legend-row"><span><i class="dot" style="background:var(--primary)"></i>Operations</span><b>42%</b></div>
+            <div class="legend-row"><span><i class="dot" style="background:var(--pink)"></i>Customer support</span><b>30%</b></div>
+            <div class="legend-row"><span><i class="dot" style="background:var(--cyan)"></i>Reporting</span><b>18%</b></div>
+            <div class="legend-row"><span><i class="dot" style="background:var(--border)"></i>Other</span><b>10%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">Demonstration only: the dashboard is not connected to a live spreadsheet or employer system. Replace the sample figures with approved, anonymized data if you want to showcase a real project.</p>
+    </div>
+  </section>
+
+  <!-- CREATIVE GALLERY -->
+  <section class="section" id="gallery">
+    <div class="section-head">
+      <div class="eyebrow">Creative side</div>
+      <h2>Visuals, layouts & design.</h2>
+      <p>Illustrative mockups showing the types of simple business visuals you can showcase. Replace these with your actual Canva work when available.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <article class="gallery-card">
+        <div class="art art-one">
+          <div class="mini-card">
+            <small>OPERATIONS REPORT</small>
+            <strong>Make data<br>make sense.</strong>
+            <div class="mini-line" style="width:90%"></div>
+            <div class="mini-line" style="width:65%"></div>
+            <div class="mini-bars"><span style="height:40%"></span><span style="height:65%"></span><span style="height:52%"></span><span style="height:90%"></span><span style="height:75%"></span></div>
+          </div>
+        </div>
+        <div class="gallery-caption"><h3>Dashboard & Report Layout</h3><p>Illustrative reporting design</p></div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="art art-two">
+          <div class="art-title">GOOD WORK.<br>GOOD PEOPLE.<br>GREAT RESULTS.</div>
+        </div>
+        <div class="gallery-caption"><h3>Social Media Graphic</h3><p>Sample promotional visual</p></div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="art art-three">
+          <div class="mini-card">
+            <small>WORKFLOW CHECKLIST</small>
+            <strong>Less busywork.<br>More progress.</strong>
+            <div style="font-size:11px;margin-top:10px">✓ Organize</div>
+            <div style="font-size:11px;margin-top:6px">✓ Standardize</div>
+            <div style="font-size:11px;margin-top:6px">✓ Improve</div>
+          </div>
+        </div>
+        <div class="gallery-caption"><h3>Workflow Infographic</h3><p>Process communication concept</p></div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="art art-four"><div class="art-title">SMALL STEPS.<br>SMARTER SYSTEMS.</div></div>
+        <div class="gallery-caption"><h3>Quote & Brand Graphic</h3><p>Simple visual content concept</p></div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="art art-five">
+          <div class="mini-card">
+            <small>WEEKLY OVERVIEW</small>
+            <strong>Team<br>performance</strong>
+            <div class="mini-bars"><span style="height:50%"></span><span style="height:78%"></span><span style="height:60%"></span><span style="height:95%"></span><span style="height:72%"></span></div>
+            <div class="mini-line" style="width:80%"></div>
+          </div>
+        </div>
+        <div class="gallery-caption"><h3>Business Presentation Visual</h3><p>Sample reporting slide</p></div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="art art-six"><div class="art-title">IDEAS INTO<br>ACTION.</div></div>
+        <div class="gallery-caption"><h3>Creative Brand Concept</h3><p>Typography and color study</p></div>
+      </article>
+    </div>
+
+    <div class="gallery-note">
+      <i class="fa-solid fa-circle-info"></i>
+      These visuals are built-in portfolio mockups, not proof of completed Canva client projects. Replace them with your own designs when you're ready to showcase actual work.
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-head">
+      <div class="eyebrow">My career journey</div>
+      <h2>Professional experience.</h2>
+    </div>
+
+    <div class="timeline">
+      <article class="job">
+        <div class="job-header">
+          <div><h3>Account Manager</h3><div class="company">Livable Inc.</div></div>
+          <span class="date">March 2022 – Present</span>
+        </div>
+        <ul>
+          <li>Manage a portfolio of 300+ client properties, conduct account health checks, address concerns, and support client retention.</li>
+          <li>Lead a 20-person billing and support team, coordinating workloads, monitoring performance, and supporting daily operations.</li>
+          <li>Oversee utility billing workflows with a focus on accurate records and on-time completion.</li>
+          <li>Standardize workflows and automate manual processes, reducing processing time by 35% or more.</li>
+          <li>Manage escalations, support issues, service expectations, and performance reporting.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div><h3>Business Manager</h3><div class="company">Loyal Exterior Cleaning</div></div>
+          <span class="date">July 2018 – August 2026</span>
+        </div>
+        <ul>
+          <li>Coordinated daily operations, job scheduling, field technician assignments, and customer communication.</li>
+          <li>Managed inquiries, invoicing, payment follow-ups, and recurring service appointments.</li>
+          <li>Prepared sales and operational reports and improved workflows using tools including Zapier and Claude.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div><h3>E-Commerce Manager</h3><div class="company">Red Rock Furniture</div></div>
+          <span class="date">February 2017 – July 2018</span>
+        </div>
+        <ul>
+          <li>Managed Shopify store operations, order processing, product listings, and data accuracy.</li>
+          <li>Handled customer inquiries, returns, refunds, weekly sales reports, and sales audits.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div><h3>Virtual Assistant</h3><div class="company">Allstar Dance Studio</div></div>
+          <span class="date">January 2015 – January 2017</span>
+        </div>
+        <ul>
+          <li>Managed customer service emails, inquiries, lead follow-ups, and enrollment reminders.</li>
+          <li>Supported the business owner with calendars, email organization, meetings, and administrative tasks.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- EARLIER SUPPORT EXPERIENCE -->
+  <section class="section" id="support">
+    <div class="section-head">
+      <div class="eyebrow">Additional experience</div>
+      <h2>Customer service & technical support.</h2>
+      <p>Six years of customer support experience across online marketplace and consumer technology environments.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project">
+        <div class="project-icon"><i class="fa-solid fa-store"></i></div>
+        <h3>Amazon Seller Support</h3>
+        <p class="company">2010 – 2013</p>
+        <p>Seller assistance, marketplace-related inquiries, customer communication, and issue resolution.</p>
+      </article>
+      <article class="project">
+        <div class="project-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Samsung Technical Support</h3>
+        <p class="company">2013 – 2016</p>
+        <p>Technical troubleshooting, product-related questions, customer guidance, and support issue resolution.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-head">
+      <div class="eyebrow">My toolkit</div>
+      <h2>Skills & software.</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3><i class="fa-brands fa-google"></i> Google Workspace</h3>
+        <div class="skill-list">
+          <span class="skill-chip">Google Sheets</span>
+          <span class="skill-chip">Google Apps Script</span>
+          <span class="skill-chip">Google Docs</span>
+          <span class="skill-chip">Google Drive</span>
+          <span class="skill-chip">Google Forms</span>
+          <span class="skill-chip">Google Slides</span>
+        </div>
+        <p class="note">Spreadsheet organization, formulas, reporting, data management, and Apps Script automation.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-database"></i> CRM & Business Platforms</h3>
+        <div class="skill-list">
+          <span class="skill-chip">HubSpot</span>
+          <span class="skill-chip">AppFolio</span>
+          <span class="skill-chip">Housecall Pro</span>
+          <span class="skill-chip">Shopify</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-gears"></i> Automation & AI</h3>
+        <div class="skill-list">
+          <span class="skill-chip">Zapier</span>
+          <span class="skill-chip">Claude</span>
+          <span class="skill-chip">Workflow Improvement</span>
+          <span class="skill-chip">Process Documentation</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-palette"></i> Creative & Administrative</h3>
+        <div class="skill-list">
+          <span class="skill-chip">Canva</span>
+          <span class="skill-chip">Basic Graphic Design</span>
+          <span class="skill-chip">Visual Content Editing</span>
+          <span class="skill-chip">Virtual Assistance</span>
+          <span class="skill-chip">Scheduling</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-people-group"></i> Core Competencies</h3>
+        <div class="skill-list">
+          <span class="skill-chip">Account Management</span>
+          <span class="skill-chip">Customer Success</span>
+          <span class="skill-chip">Team Leadership</span>
+          <span class="skill-chip">Customer Support</span>
+          <span class="skill-chip">KPI Monitoring</span>
+          <span class="skill-chip">Escalation Management</span>
+          <span class="skill-chip">Reporting</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-layer-group"></i> Industry Experience</h3>
+        <div class="skill-list">
+          <span class="skill-chip">Property Management</span>
+          <span class="skill-chip">Utility Billing</span>
+          <span class="skill-chip">Home Services</span>
+          <span class="skill-chip">E-Commerce</span>
+          <span class="skill-chip">Online Marketplaces</span>
+          <span class="skill-chip">Consumer Electronics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-head">
+      <div class="eyebrow">Education</div>
+      <h2>Academic background.</h2>
+    </div>
+    <div class="panel">
+      <h3>Bachelor of Science in Information Technology</h3>
+      <p style="color:var(--muted);margin-bottom:0">STI College, Pasay · 2006–2010</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="contact-box">
+      <div class="eyebrow">Let's connect</div>
+      <h2 style="font-size:clamp(30px,4vw,42px);margin:12px 0">Let's do great work together.</h2>
+      <p>
+        I'm interested in remote opportunities in business operations, team leadership,
+        account management, customer success, and operations coordination. If you're
+        looking for someone adaptable, organized, and comfortable wearing multiple hats,
+        I'd love to connect.
+      </p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:rubieannmacalanda@gmail.com"><i class="fa-solid fa-envelope"></i> Email Me</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/rubieannmacalanda" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Rubie Ann Macalanda</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+  // Theme toggle
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+
+  function applyTheme(dark) {
+    document.body.classList.toggle("dark", dark);
+    themeIcon.className = dark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    document.querySelector('meta[name="theme-color"]').content = dark ? "#141321" : "#f8f7ff";
+  }
+
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem("rubie-portfolio-theme"); } catch (e) {}
+  applyTheme(savedTheme ? savedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  themeToggle.addEventListener("click", () => {
+    const dark = !document.body.classList.contains("dark");
+    applyTheme(dark);
+    try { localStorage.setItem("rubie-portfolio-theme", dark ? "dark" : "light"); } catch (e) {}
+  });
+
+  // Mobile navigation
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.innerHTML = open
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  // Interactive demonstration dashboard
+  const dashboardData = {
+    monthly: {
+      title: "Sample work completed",
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      values: [42, 58, 49, 75, 67, 88]
+    },
+    quarterly: {
+      title: "Sample quarterly output",
+      labels: ["Q1", "Q2", "Q3", "Q4"],
+      values: [55, 72, 64, 92]
+    }
+  };
+
+  const periodSelect = document.getElementById("periodSelect");
+  const barChart = document.getElementById("barChart");
+  const barTitle = document.getElementById("barTitle");
+
+  function renderChart(period) {
+    const data = dashboardData[period];
+    barTitle.textContent = data.title;
+    barChart.innerHTML = "";
+
+    data.labels.forEach((label, index) => {
+      const col = document.createElement("div");
+      col.className = "bar-col";
+
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      bar.style.height = data.values[index] + "%";
+      bar.title = "Illustrative sample value: " + data.values[index];
+
+      const text = document.createElement("span");
+      text.className = "bar-label";
+      text.textContent = label;
+
+      col.append(bar, text);
+      barChart.appendChild(col);
+    });
+  }
+
+  periodSelect.addEventListener("change", () => renderChart(periodSelect.value));
+
+  // Back-to-top button
+  const backTop = document.getElementById("backTop");
+  window.addEventListener("scroll", () => {
+    backTop.classList.toggle("visible", window.scrollY > 450);
+  });
+  backTop.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
